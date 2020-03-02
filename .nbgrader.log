@@ -1,0 +1,109 @@
+[AssignApp | ERROR] No assignment called '2020-03-03' exists in the database
+[AssignApp | ERROR] There was an error processing assignment: /Users/sam/repos/python-workshops/sol/./2020-03-03
+[AssignApp | ERROR] Traceback (most recent call last):
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/api.py", line 1234, in find_assignment
+        .filter(Assignment.name == name)\
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3288, in one
+        raise orm_exc.NoResultFound("No row was found for one()")
+    sqlalchemy.orm.exc.NoResultFound: No row was found for one()
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/converters/assign.py", line 131, in init_assignment
+        gb.find_assignment(assignment_id)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/api.py", line 1237, in find_assignment
+        raise MissingEntry("No such assignment: {}".format(name))
+    nbgrader.api.MissingEntry: No such assignment: 2020-03-03
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/converters/base.py", line 289, in convert_notebooks
+        self.init_assignment(gd['assignment_id'], gd['student_id'])
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/converters/assign.py", line 135, in init_assignment
+        raise NbGraderException(msg)
+    nbgrader.converters.base.NbGraderException: No assignment called '2020-03-03' exists in the database
+    
+[AssignApp | ERROR] There was an error processing assignment '2020-03-03' for student '.'
+[AssignApp | ERROR] Please see the error log (.nbgrader.log) for details on the specific errors on the above failures.
+[AssignApp | INFO] Updating/creating assignment '2020-03-03': {}
+[AssignApp | INFO] Converting notebook /Users/sam/repos/python-workshops/sol/./2020-03-03/problems.ipynb
+[AssignApp | ERROR] Traceback (most recent call last):
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/preprocessors/checkcellmetadata.py", line 11, in preprocess
+        Validator().validate_nb(nb)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/nbgraderformat/v1.py", line 102, in validate_nb
+        super(ValidatorV1, self).validate_nb(nb)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/nbgraderformat/common.py", line 35, in validate_nb
+        self.validate_cell(cell)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/nbgraderformat/v1.py", line 69, in validate_cell
+        super(ValidatorV1, self).validate_cell(cell)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/nbgraderformat/common.py", line 31, in validate_cell
+        jsonschema.validate(cell.metadata['nbgrader'], self.schema)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/jsonschema/validators.py", line 899, in validate
+        raise error
+    jsonschema.exceptions.ValidationError: 2 is greater than the maximum of 1
+    
+    Failed validating 'maximum' in schema['properties']['schema_version']:
+        {'description': 'the version of the cell metadata schema',
+         'maximum': 1,
+         'minimum': 1,
+         'type': 'integer'}
+    
+    On instance['schema_version']:
+        2
+    
+[AssignApp | ERROR] Notebook failed to validate. Please update the metadata with `nbgrader update`.
+[AssignApp | ERROR] There was an error processing assignment: /Users/sam/repos/python-workshops/sol/./2020-03-03
+[AssignApp | ERROR] Traceback (most recent call last):
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/converters/base.py", line 293, in convert_notebooks
+        self.convert_single_notebook(notebook_filename)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/converters/base.py", line 249, in convert_single_notebook
+        output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbconvert/exporters/exporter.py", line 179, in from_filename
+        return self.from_file(f, resources=resources, **kw)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbconvert/exporters/exporter.py", line 197, in from_file
+        return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbconvert/exporters/notebook.py", line 32, in from_notebook_node
+        nb_copy, resources = super(NotebookExporter, self).from_notebook_node(nb, resources, **kw)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbconvert/exporters/exporter.py", line 139, in from_notebook_node
+        nb_copy, resources = self._preprocess(nb_copy, resources)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbconvert/exporters/exporter.py", line 316, in _preprocess
+        nbc, resc = preprocessor(nbc, resc)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbconvert/preprocessors/base.py", line 47, in __call__
+        return self.preprocess(nb, resources)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/preprocessors/checkcellmetadata.py", line 16, in preprocess
+        raise ValidationError(msg)
+    jsonschema.exceptions.ValidationError: Notebook failed to validate. Please update the metadata with `nbgrader update`.
+    
+[AssignApp | ERROR] There was an error processing assignment '2020-03-03' for student '.'
+[AssignApp | ERROR] Please see the error log (.nbgrader.log) for details on the specific errors on the above failures.
+[UpdateApp | ERROR] No notebooks given
+[UpdateApp | INFO] Updating metadata for notebook: sol/2020-03-03/problems.ipynb
+[UpdateApp | ERROR] Traceback (most recent call last):
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/apps/updateapp.py", line 76, in start
+        write(nb, notebook)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/nbgraderformat/v1.py", line 130, in write_v1
+        ValidatorV1().validate_nb(nb)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/nbgraderformat/v1.py", line 102, in validate_nb
+        super(ValidatorV1, self).validate_nb(nb)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/nbgraderformat/common.py", line 35, in validate_nb
+        self.validate_cell(cell)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/nbgraderformat/v1.py", line 69, in validate_cell
+        super(ValidatorV1, self).validate_cell(cell)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/nbgrader/nbgraderformat/common.py", line 31, in validate_cell
+        jsonschema.validate(cell.metadata['nbgrader'], self.schema)
+      File "/Users/sam/anaconda3/lib/python3.7/site-packages/jsonschema/validators.py", line 899, in validate
+        raise error
+    jsonschema.exceptions.ValidationError: 2 is greater than the maximum of 1
+    
+    Failed validating 'maximum' in schema['properties']['schema_version']:
+        {'description': 'the version of the cell metadata schema',
+         'maximum': 1,
+         'minimum': 1,
+         'type': 'integer'}
+    
+    On instance['schema_version']:
+        2
+    
+[UpdateApp | ERROR] Notebook 'sol/2020-03-03/problems.ipynb' failed to validate, metadata is corrupted
