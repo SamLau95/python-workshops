@@ -11,4 +11,4 @@ department.
 [d01]: https://mybinder.org/v2/gh/SamLau95/python-workshops/master?filepath=data-viz%2Fwalkthrough.ipynb
 [h01]: https://nbviewer.jupyter.org/github/SamLau95/python-workshops/blob/master/data-viz/walkthrough.ipynb
 [p01]: https://mybinder.org/v2/gh/SamLau95/python-workshops/master?filepath=probs%2Fdata-viz%2Fproblems.ipynb
-[ph01]: https://nbviewer.jupyter.org/github/SamLau95/python-workshops/blob/master/sol/data-viz/problems.ipynb
+[sol01]: https://nbviewer.jupyter.org/github/SamLau95/python-workshops/blob/master/sol/data-viz/problems.ipynb
